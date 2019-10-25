@@ -21,9 +21,9 @@ print(list(filter(validarPais, lineas_diccionario)))
 
 print("Valor minimo y valor maximo:")
 # saco la lista en posicion 2,1
-validarEstatura =lambda x: list(x.items())[2][1]
+validarEstatura =list(map(lambda x: list(x.items())[2][1],lineas_diccionario))
 # uso min y max para despues imprimirlos
 print("minimo:")
-print(min(list(map(validarEstatura, lineas_diccionario))))
+print(list(filter(lambda x: list(x.items())[2][1] == min(validarEstatura), lineas_diccionario)))
 print("maximo:")
-print(max(list(map(validarEstatura, lineas_diccionario))))
+print(list(filter(lambda x: list(x.items())[2][1] == max(validarEstatura), lineas_diccionario)))
